@@ -1,0 +1,240 @@
+:root {
+	--themecolor: #f67280;
+	--softgrey: #ffffffb5;
+	--themecolorsoft: #b52d0d1a;
+	--darkcolor: #222327;
+	--headercolor: #0a0a0a;
+}
+
+.load-more-btn {
+	color: var(--themecolor);
+}
+
+.all-contents a:hover {
+	color: var(--themecolor);
+}
+
+.site-header.default-header-style.style-one {
+	background-color: var(--headercolor);
+}
+.top-meta .entry-date, .billing-info-edit {
+	color: var(--themecolor);
+}
+.subscribe-section-content .subscribe-form #mc-form #subscribe-btn:hover,
+.topbutton,
+.read-more-wrap > .read-more:focus, 
+.read-more-wrap > .read-more:hover,
+.sidebar-items .widget-title,
+.search-wrap .search-form button, .search-wrap .search-form input[type="button"], 
+.search-wrap .search-form input[type="reset"], 
+.search-wrap .search-form input[type="submit"],
+.feature-item.style-three,
+.site-header.header-style-one .hamburger-menus > span,
+.post-slider-four .read-more-share .read-more-wrap > .read-more {
+    background-color: var(--themecolor);
+}
+
+.paging-navigation.style-one .nav-links > li.active > a, 
+.paging-navigation.style-one .nav-links > li > a:hover {
+    background-color: var(--themecolor) !important;
+}
+
+.intro-element .intro-socail-share .socail-share a {
+	color: #ffffff;
+}
+.intro-element .intro-socail-share a.search-bar {
+	color: var(--themecolor) !important;
+}
+
+.copyright-text a:hover,
+.entry-category > a,
+.entry-meta-content a:hover, 
+.entry-meta-content a:focus,
+.site-header.header-style-one.style-one .search-wrap > .search-btn, 
+.site-header.header-style-one.style-one .header-card-area > a,
+.site-header .search-wrap > .search-btn:hover,
+.post-slider-four .share-post .social-share a:hover, 
+.post-slider-four .share-post .social-share a:focus,
+.footer-bottom-area .socail-share-text > a:hover,
+.site-header .search-wrap > .search-btn,
+.header-card-area > a {
+    color: var(--themecolor);
+}
+.site-header.header-style-one .mainmenu li:hover > a, 
+.site-header.header-style-one .mainmenu > li > a:hover, 
+.site-header.header-style-one .mainmenu > li > a.active,
+.intro-element .intro-socail-share .socail-share a:hover,
+.site-header.default-header-style .mainmenu li:hover > a, 
+.site-header.default-header-style .mainmenu > li > a:hover, 
+.site-header.default-header-style .mainmenu > li > a.active {
+    color: var(--themecolor) !important;
+}
+.single-price-box .price h2 {
+	color: var(--themecolor);
+}
+.sidebar-items .widget-title::before {
+	border-color: var(--themecolor) transparent transparent;
+}
+.search-bar:hover {
+	color: var(--themecolor);
+}
+.navigation-area .nav li.nav-current a {
+	color: #f8f8f8 !important;
+}
+.author-meta a:hover {
+	color: var(--themecolor) !important;
+}
+.single-input .icon_mail i {
+	color: var(--themecolor);
+}
+.account-links a:hover {
+	color: var(--themecolor);
+}
+.contact-form .btn-primary,
+.subscribe-btn .btn,
+.btn-primary:hover, .btn-primary:focus {
+	background: var(--themecolor);
+	border-color: var(--themecolor);
+}
+.tags-sec a:hover {
+	color: var(--themecolor);
+}
+
+.m-btn a {
+	color: var(--themecolor) !important;
+	    background: #fff !important;
+	    font-weight: 600;
+}
+.single-price-box.middle,
+.single-input .icon_mail {
+	background: var(--themecolorsoft);
+}
+
+.site-footer {
+	background: #0b0705;
+}
+.site-footer .widget-title {
+	color: #fff;
+}
+.site-footer .widget-content li a {
+	color: #eeeeee;
+}
+.tb-subscribe-widget .subscribe-form .form-group input[type='email'] {
+	border: 1px solid #e6e6e6;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+}
+.tb-subscribe-widget .subscribe-form .form-group input[type='email']:focus {
+  color: white;
+  border-bottom-color: white;
+}
+
+.widget-content .subscribe-form button {
+	background: var(--themecolor);
+	border: 1px solid var(--themecolor);
+}
+
+.social-content a {
+  color: #ffffff;
+}
+.feature-info sup {
+	color: var(--themecolor);
+}
+
+
+/*Dark Mode*/
+/*body.bg-dark-wrap .header-logo-area .site-branding img {
+	content: url('../../images/dark-logo.png');
+}*/
+body.bg-dark-wrap {
+	background: var(--darkcolor) !important;
+	color: #cacaca;
+}
+body.bg-dark-wrap .site-header.default-header-style.style-one {
+	background: #000 !important;
+}
+body.bg-dark-wrap .site-slogan {
+	color: var(--softgrey);
+}
+body.bg-dark-wrap .site-slogan {
+	color: var(--softgrey);
+}
+body.bg-dark-wrap .site-header.default-header-style .navigation .nav > li > a, 
+body.bg-dark-wrap .site-header.header-style-one .navigation .nav > li > a {
+	color: white;
+}
+body.bg-dark-wrap .search-bar {
+	background: transparent;
+}
+body.bg-dark-wrap .frontpage-slider-one.style-three.carousel-rectangle.carousel-nav-center > .owl-nav > div {
+	    background-color: #18181a;
+}
+body.bg-dark-wrap .site-header.default-header-style .menu-content:before {
+	background-color: #66433b;
+}
+body.bg-dark-wrap .post.post-grid-style .entry-title {
+	color: white;
+}
+body.bg-dark-wrap h1,
+body.bg-dark-wrap h2,
+body.bg-dark-wrap h3,
+body.bg-dark-wrap h4,
+body.bg-dark-wrap h5,
+body.bg-dark-wrap h6 {
+	color: white;
+}
+body.bg-dark-wrap .main-wrapper {
+	background: #1f2022 !important;
+}
+body.bg-dark-wrap .entry-category > a {
+	color: #7f7f85 !important;
+}
+body.bg-dark-wrap .entry-category > a:after {
+	color: #7f7f85 !important;
+}
+body.bg-dark-wrap .post .entry-user .author-name {
+	color: white;
+}
+body.bg-dark-wrap .post .entry-user .entry-date {
+	color: #cacaca;
+}
+body.bg-dark-wrap .post.post-grid-style.post-grid-style-two {
+	    background-color: #2e2e32;
+}
+body.bg-dark-wrap .copyright-text > p,
+body.bg-dark-wrap .footer-bottom-area .socail-share > a {
+	color: #414141;
+}
+
+body.bg-dark-wrap .post.single-post blockquote {
+	background-color: #3a3a3a;
+	color: #ffffff;
+}
+body.bg-dark-wrap .author-info #author-details .author-name {
+	color: #ffffff;
+}
+
+body.bg-dark-wrap .post-full-custom-excerpt {
+	color: #ababab;
+}
+body.bg-dark-wrap .post.single-post p {
+	color: #ababab;
+}
+body.bg-dark-wrap .all-contents figcaption {
+	color: #ababab;
+}
+
+body.bg-dark-wrap  .main-wrapper.mrt-105.bg-white {
+	background: #222327  !important;
+}
+
+body.bg-dark-wrap .parent-heading-pattern,
+body.bg-dark-wrap .parent-heading-pattern h1,
+body.bg-dark-wrap .cus-membership-section .container-wrapper:after {
+	    background: #1f2022;
+}
+
+body.bg-dark-wrap .author-bio,
+body.bg-dark-wrap .parrnet-sub-heading {
+	    color: #8a8a8a;
+}
