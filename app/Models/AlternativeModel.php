@@ -15,11 +15,6 @@ class AlternativeModel extends Model
     	return $this->hasMany('App\Models\AlternativeValueModel', 'id_alternatif', 'id');
     }
 
-    public function category()
-    {
-        return $this->belongsTo('App\Models\TypeModel', 'id_kategori');
-    }
-
     public function gallery()
     {
     	return $this->hasMany('App\Models\AlternativeGalleryModel', 'id_alternatif', 'id');

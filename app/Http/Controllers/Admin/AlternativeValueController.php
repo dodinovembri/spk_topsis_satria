@@ -9,7 +9,6 @@ use App\Models\AlternativeValueModel;
 use App\Models\CriteriaModel;
 use App\Models\CriterionValueModel;
 use App\Models\FacilityModel;
-use App\Models\AccessibilityModel;
 use App\Models\AlternativeFacilityModel;
 use App\Models\AlternativeAccessibilityModel;
 
@@ -44,7 +43,6 @@ class AlternativeValueController extends Controller
     {
         $data['criterias'] = CriteriaModel::with('criterion_value')->get();
         $data['facilities'] = FacilityModel::all();
-        $data['accessibilities'] = AccessibilityModel::all();
 
         return view('admin.alternative_value.create', $data);
     }
@@ -104,38 +102,6 @@ class AlternativeValueController extends Controller
             $insert_facility->save();
         }
 
-        // save accessibility
-        $accessibility = $request->accessibility;
-        $c4 = CriteriaModel::where('kode_kriteria', "C4")->first();
-        if (count($accessibility) == 1) {
-            $criterion_value2 = CriterionValueModel::where('id_kriteria', $c4->id)->where('nilai', 1)->first();
-        } elseif (count($accessibility) == 2) {
-            $criterion_value2 = CriterionValueModel::where('id_kriteria', $c4->id)->where('nilai', 2)->first();
-        } elseif (count($accessibility) == 3) {
-            $criterion_value2 = CriterionValueModel::where('id_kriteria', $c4->id)->where('nilai', 3)->first();
-        } elseif (count($accessibility) == 4) {
-            $criterion_value2 = CriterionValueModel::where('id_kriteria', $c4->id)->where('nilai', 4)->first();
-        } elseif (count($accessibility) >= 5) {
-            $criterion_value2 = CriterionValueModel::where('id_kriteria', $c4->id)->where('nilai', 5)->first();
-        }
-
-        $insert3 = new AlternativeValueModel();
-        $insert3->id_alternatif = $request->session()->get('id_alternatif');
-        $insert3->id_kriteria = $c4->id;
-        $insert3->id_nilai_kriteria = $criterion_value2->id;
-        $insert3->save();
-
-        $findtodelete_accesibility = AlternativeAccessibilityModel::where('id_alternatif', $request->session()->get('id_alternatif'))->get();
-        foreach ($findtodelete_accesibility as $key => $value) {
-            $value->delete();
-        }
-        foreach ($accessibility as $key => $value) {
-            $insert_accesibility = new AlternativeAccessibilityModel();
-            $insert_accesibility->id_alternatif = $request->session()->get('id_alternatif');
-            $insert_accesibility->id_aksesibilitas = $value;
-            $insert_accesibility->save();
-        }
-
         return redirect(url('admin/alternative_values', $request->session()->get('id_alternatif')))->with('message', 'Data Nilai Kriteria berhasil di simpan!');
     }
 
@@ -174,16 +140,6 @@ class AlternativeValueController extends Controller
             $data['accessibilities'] = [];
             $data['alternative_facilities'] = $alternative_facilities;
             $data['facilities'] = FacilityModel::whereNotIn('id', $id_fasilitas)->get();
-        } elseif ($criteria->kode_kriteria == "C4") {
-            $alternative_accessibilities = AlternativeAccessibilityModel::with('accessibility')->where('id_alternatif', $alternative_value->id_alternatif)->get();
-            $id_aksesibilitas = [];
-            foreach ($alternative_accessibilities as $key => $value) {
-                array_push($id_aksesibilitas, $value->id_aksesibilitas);
-            }
-
-            $data['facilities'] = [];
-            $data['alternative_accessibilities'] = $alternative_accessibilities;
-            $data['accessibilities'] = AccessibilityModel::whereNotIn('id', $id_aksesibilitas)->get();
         }
         $data['criterion_value'] = CriterionValueModel::where('id_kriteria', $alternative_value->id_kriteria)->get();
 
@@ -228,36 +184,6 @@ class AlternativeValueController extends Controller
                 $insert_facility->id_alternatif = $request->session()->get('id_alternatif');
                 $insert_facility->id_fasilitas = $value;
                 $insert_facility->save();
-            }
-        } elseif ($request->criteria == "C4") {
-            // save accessibility
-            $accessibility = $request->accessibility;
-            $c4 = CriteriaModel::where('kode_kriteria', "C4")->first();
-            if (count($accessibility) == 1) {
-                $criterion_value2 = CriterionValueModel::where('id_kriteria', $c4->id)->where('nilai', 1)->first();
-            } elseif (count($accessibility) == 2) {
-                $criterion_value2 = CriterionValueModel::where('id_kriteria', $c4->id)->where('nilai', 2)->first();
-            } elseif (count($accessibility) == 3) {
-                $criterion_value2 = CriterionValueModel::where('id_kriteria', $c4->id)->where('nilai', 3)->first();
-            } elseif (count($accessibility) == 4) {
-                $criterion_value2 = CriterionValueModel::where('id_kriteria', $c4->id)->where('nilai', 4)->first();
-            } elseif (count($accessibility) >= 5) {
-                $criterion_value2 = CriterionValueModel::where('id_kriteria', $c4->id)->where('nilai', 5)->first();
-            }
-
-            $update = AlternativeValueModel::find($id);
-            $update->id_nilai_kriteria = $criterion_value2->id;
-            $update->update();
-
-            $findtodelete_accesibility = AlternativeAccessibilityModel::where('id_alternatif', $request->session()->get('id_alternatif'))->get();
-            foreach ($findtodelete_accesibility as $key => $value) {
-                $value->delete();
-            }
-            foreach ($accessibility as $key => $value) {
-                $insert_accesibility = new AlternativeAccessibilityModel();
-                $insert_accesibility->id_alternatif = $request->session()->get('id_alternatif');
-                $insert_accesibility->id_aksesibilitas = $value;
-                $insert_accesibility->save();
             }
         }else{
             $update = AlternativeValueModel::find($id);

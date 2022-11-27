@@ -127,7 +127,15 @@ Route::prefix('admin')->group(function () {
     Route::get('slider/show/{id}', [App\Http\Controllers\Admin\SliderController::class, 'show'])->name('show');
     Route::get('slider/edit/{id}', [App\Http\Controllers\Admin\SliderController::class, 'edit'])->name('edit');
     Route::post('slider/update/{id}', [App\Http\Controllers\Admin\SliderController::class, 'update'])->name('update');
-    Route::get('slider/destroy/{id}', [App\Http\Controllers\Admin\SliderController::class, 'destroy'])->name('destroy');  
+    Route::get('slider/destroy/{id}', [App\Http\Controllers\Admin\SliderController::class, 'destroy'])->name('destroy');
+    
+    Route::get('facility', [App\Http\Controllers\Admin\FacilityController::class, 'index'])->name('index');
+    Route::get('facility/create', [App\Http\Controllers\Admin\FacilityController::class, 'create'])->name('create');
+    Route::post('facility/store', [App\Http\Controllers\Admin\FacilityController::class, 'store'])->name('store');
+    Route::get('facility/show/{id}', [App\Http\Controllers\Admin\FacilityController::class, 'show'])->name('show');
+    Route::get('facility/edit/{id}', [App\Http\Controllers\Admin\FacilityController::class, 'edit'])->name('edit');
+    Route::post('facility/update/{id}', [App\Http\Controllers\Admin\FacilityController::class, 'update'])->name('update');
+    Route::get('facility/destroy/{id}', [App\Http\Controllers\Admin\FacilityController::class, 'destroy'])->name('destroy');
     
     Route::get('alternative_galleries/{id}', [App\Http\Controllers\Admin\AlternativeGalleryController::class, 'index'])->name('index');
     Route::get('alternative_gallery/create', [App\Http\Controllers\Admin\AlternativeGalleryController::class, 'create'])->name('create');

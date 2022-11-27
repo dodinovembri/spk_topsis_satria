@@ -37,17 +37,6 @@
                                         <div class="card-header">Buat Alternatif</div>
                                         <div class="card-body">
                                             <div class="form-group row gutters">
-                                                <label for="inputEmail3" class="col-sm-3 col-form-label">Jenis Alternatif</label>
-                                                <div class="col-sm-9">
-                                                    <select name="id_kategori" class="form-control" id="">
-                                                        <option value="">Select</option>
-                                                        <?php foreach ($categories as $key => $value) { ?>
-                                                            <option value="{{ $value->id }}">{{ $value->nama_kategori }}</option>
-                                                        <?php } ?>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row gutters">
                                                 <label for="inputEmail3" class="col-sm-3 col-form-label">Kode Alternatif</label>
                                                 <div class="col-sm-9">
                                                     <input type="text" name="kode_alternatif" class="form-control" placeholder="Kode Alternatif" required>
@@ -78,9 +67,9 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row gutters">
-                                                <label for="inputEmail3" class="col-sm-3 col-form-label">Gambar Panorama</label>
+                                                <label for="inputEmail3" class="col-sm-3 col-form-label">Video</label>
                                                 <div class="col-sm-9">
-                                                    <input type="file" name="gambar_panorama" class="form-control" placeholder="Longitude">
+                                                    <input type="file" name="video" class="form-control" placeholder="Longitude">
                                                 </div>
                                             </div>
                                             <div class="form-group row gutters">

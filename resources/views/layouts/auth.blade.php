@@ -30,7 +30,7 @@
     
 		<footer class="main-footer no-bdr fixed-btm">
 			<div class="container">
-				Copyright Unify Admin 2017.
+				Copyright Studio Foto Admin 2022.
 			</div>
 		</footer>
 	</body>

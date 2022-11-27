@@ -50,7 +50,7 @@
                                                 </div>
                                             </div>
                                             <?php if (isset($facilities) || isset($accessibilities)) { ?>
-                                                <?php if (count($facilities) > 0 || count($accessibilities) > 0) {
+                                                <?php if (count($facilities) > 0) {
                                                     if (count($facilities) > 0) { ?>
                                                         <input type="hidden" name="criteria" id="" value="C3">
                                                         <div class="form-group row gutters">
@@ -67,25 +67,6 @@
                                                                 <label for="inputEmail3" class="col-sm-3 col-form-label"></label>
                                                                 <div class="col-sm-9">
                                                                     <input type="checkbox" name="facility[]" value="{{ $value2->id }}"> {{$value2->nama_fasilitas}}
-                                                                </div>
-                                                            <?php } ?>
-                                                        </div>
-                                                    <?php } else if (count($accessibilities) > 0) { ?>
-                                                        <input type="hidden" name="criteria" id="" value="C4">
-                                                        <div class="form-group row gutters">
-                                                            <label for="inputEmail3" class="col-sm-3 col-form-label">Aksesibilitas</label>
-                                                        </div>
-                                                        <div class="form-group row gutters" style="margin-top: -40px;">
-                                                            <?php foreach ($alternative_accessibilities as $key2 => $value2) { ?>
-                                                                <label for="inputEmail3" class="col-sm-3 col-form-label"></label>
-                                                                <div class="col-sm-9">
-                                                                    <input type="checkbox" name="accessibility[]" value="{{ $value2->id_aksesibilitas }}" checked> {{$value2->accessibility->nama_aksesibilitas}}
-                                                                </div>
-                                                            <?php } ?>
-                                                            <?php foreach ($accessibilities as $key2 => $value2) { ?>
-                                                                <label for="inputEmail3" class="col-sm-3 col-form-label"></label>
-                                                                <div class="col-sm-9">
-                                                                    <input type="checkbox" name="accessibility[]" value="{{ $value2->id }}"> {{$value2->nama_aksesibilitas }}
                                                                 </div>
                                                             <?php } ?>
                                                         </div>

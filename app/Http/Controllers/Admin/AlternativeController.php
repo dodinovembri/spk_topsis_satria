@@ -28,8 +28,7 @@ class AlternativeController extends Controller
      */
     public function create()
     {
-        $data['categories'] = TypeModel::all();
-        return view('admin.alternative.create', $data);
+        return view('admin.alternative.create');
     }
 
     /**
@@ -47,22 +46,21 @@ class AlternativeController extends Controller
             $fileName3                  = uniqid() . '.' . $file->getClientOriginalExtension();
             $request->file('gambar')->move("img/alternative/", $fileName3);
 
-            $gambar_panorama = $request->file('gambar_panorama');
-            if (isset($gambar_panorama)) {
-                $file2                       = $request->file('gambar_panorama');
+            $video = $request->file('video');
+            if (isset($video)) {
+                $file2                       = $request->file('video');
                 $fileName4                  = uniqid() . '.' . $file2->getClientOriginalExtension();
-                $request->file('gambar_panorama')->move("img/alternative/", $fileName4);
+                $request->file('video')->move("img/alternative/", $fileName4);
             }     
 
             $insert = new AlternativeModel();
-            $insert->id_kategori = $request->id_kategori;
             $insert->kode_alternatif = $request->kode_alternatif;
             $insert->nama_alternatif = $request->nama_alternatif;
             $insert->latitude = $request->latitude;
             $insert->longitude = $request->longitude;
             $insert->gambar = $fileName3;
-            if (isset($gambar_panorama)) {
-                $update->gambar_panorama = $fileName4;
+            if (isset($video)) {
+                $insert->video = $fileName4;
             }
             $insert->keterangan = $request->keterangan;
             $insert->save();
@@ -93,8 +91,7 @@ class AlternativeController extends Controller
      */
     public function edit($id)
     {
-        $data['alternative'] = AlternativeModel::with('category')->where('id', $id)->first();
-        $data['categories'] = TypeModel::all();
+        $data['alternative'] = AlternativeModel::where('id', $id)->first();
         return view('admin.alternative.edit', $data);
     }
 
@@ -113,15 +110,14 @@ class AlternativeController extends Controller
             $fileName3                  = uniqid() . '.' . $file->getClientOriginalExtension();
             $request->file('gambar')->move("img/alternative/", $fileName3);
         }
-        $gambar_panorama = $request->file('gambar_panorama');
-        if (isset($gambar_panorama)) {
-            $file2                       = $request->file('gambar_panorama');
+        $video = $request->file('video');
+        if (isset($video)) {
+            $file2                       = $request->file('video');
             $fileName4                  = uniqid() . '.' . $file2->getClientOriginalExtension();
-            $request->file('gambar_panorama')->move("img/alternative/", $fileName4);
+            $request->file('video')->move("img/alternative/", $fileName4);
         }        
 
         $update = AlternativeModel::find($id);
-        $update->id_kategori = $request->id_kategori;
         $update->kode_alternatif = $request->kode_alternatif;
         $update->nama_alternatif = $request->nama_alternatif;
         $update->latitude = $request->latitude;
@@ -129,8 +125,8 @@ class AlternativeController extends Controller
         if (isset($gambar)) {
             $update->gambar = $fileName3;
         }
-        if (isset($gambar_panorama)) {
-            $update->gambar_panorama = $fileName4;
+        if (isset($video)) {
+            $update->video = $fileName4;
         }
         $update->keterangan = $request->keterangan;
         $update->update();
