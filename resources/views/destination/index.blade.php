@@ -21,7 +21,7 @@
 
 <div id="loader-overlay">
     <div class="loader">
-        <img src="{{ asset('assets/content/images/2021/04/logo.png') }}" alt="Pathway blog" />
+        <img src="{{ asset('assets/content/images/2021/04/logo.jpg') }}" alt="Pathway blog" />
         <i class="fas fa-spinner fa-pulse"></i>
     </div>
 </div>
@@ -31,14 +31,14 @@
     @include('components.header')
 
     <div class="frontpage-slider-posts style-one">
-        <?php if (isset($alternative->gambar_panorama)) { ?>
+        <?php if (isset($alternative->video)) { ?>
             
             <div id="container" style="height: 85%;"></div>
 
             <script>
                 var div = document.getElementById('container');
                 var PSV = new PhotoSphereViewer({
-                    panorama: "{{ asset('img/alternative') }}/{{ $alternative->gambar_panorama }}",
+                    panorama: "{{ asset('img/alternative') }}/{{ $alternative->video }}",
                     container: div,
                     time_anim: 3000,
                     navbar: true,
@@ -48,7 +48,7 @@
                 });
             </script>
         <?php } else{ ?>
-            <p>Gambar Panorama tidak tersedia</p>
+            <p>Video tidak tersedia</p>
         <?php } ?>
     </div>
 </div>

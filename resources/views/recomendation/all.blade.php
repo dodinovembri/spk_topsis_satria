@@ -10,7 +10,7 @@
     @include('components.header')
     <br>
     <div>
-        <h3 style="text-align: center;">Rekomendasi Tempat Wisata</h3>
+        <h3 style="text-align: center;">Rekomendasi Studio Foto Prewedding</h3>
     </div><br>
     <div class="main-wrapper pd-t-60">
         <div class="container pd-0">

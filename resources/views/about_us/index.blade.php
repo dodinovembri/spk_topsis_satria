@@ -15,7 +15,7 @@
                 <div class="col-lg-12 main-wrapper-content">
                     <main class="site-main style-two">
                         <div class="row">
-                            <h1> Privacy Policy for SPK Destinasi Wisata</h1>
+                            <h1> Privacy Policy for SPK Pemilihan Studio Foto Prewedding</h1>
                             <p style="text-align: justify;"> If you require any more information or have any questions about our privacy policy, please feel free to contact us by email at [CONTACT@YOUREMAIL.COM].</p>
                             <p style="text-align: justify;">At [YOUR SITE URL] we consider the privacy of our visitors to be extremely important. This privacy policy document describes in detail the types of personal information is collected and recorded by [YOUR SITE URL] and how we use it. </p>
                             <p style="text-align: justify;"> <b>Log Files</b><br /> Like many other Web sites, [YOUR SITE URL] makes use of log files. These files merely logs visitors to the site – usually a standard procedure for hosting companies and a part of hosting services's analytics. The information inside the log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date/time stamp, referring/exit pages, and possibly the number of clicks. This information is used to analyze trends, administer the site, track user's movement around the site, and gather demographic information. IP addresses, and other such information are not linked to any information that is personally identifiable. </p>

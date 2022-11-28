@@ -76,7 +76,7 @@
                                                 <div class="form-inner-content">
                                                     <form data-members-form="signin" action="{{ url('recomendation/search') }}" method="POST">
                                                         @csrf
-                                                        <h4>Temukan Rekomendasi Object Wisata</h4>
+                                                        <h4>Temukan Rekomendasi Studio Foto Prewedding</h4>
                                                         <?php foreach ($criterias as $key => $value) {
                                                             if ($value->kode_kriteria == "C3") {
                                                                 continue;

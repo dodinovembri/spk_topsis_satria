@@ -27,7 +27,7 @@
                             <div class="all-contents">
                                 <figure class="kg-card kg-image-card kg-card-hascaption"><img src="{{ asset('img/alternative') }}/{{ $alternative->gambar }}" class="kg-image" alt loading="lazy" width="1920" height="1104" sizes="(min-width: 720px) 720px">
                                     <a href="{{ url('destination', $alternative->id) }}" target="_blank">
-                                        <figcaption>Lihat dengan mode Panorama</figcaption>
+                                        <figcaption>Lihat dengan mode Video</figcaption>
                                     </a>
                                 </figure>
                                 <p style="margin-top: -40px;"> <?php echo htmlspecialchars_decode($alternative->keterangan) ?></p>
