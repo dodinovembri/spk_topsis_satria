@@ -7,7 +7,6 @@ use App\Models\AlternativeValueModel;
 use App\Models\CriteriaModel;
 use App\Models\AlternativeModel;
 use App\Models\FacilityModel;
-use App\Models\AccessibilityModel;
 use Illuminate\Support\Facades\DB;
 
 class RecomendationController extends Controller
@@ -95,7 +94,6 @@ class RecomendationController extends Controller
         $data['alternatives'] = AlternativeModel::all();
         $data['criterias'] = CriteriaModel::with('criterion_value')->get();
         $data['facilities'] = FacilityModel::all();
-        $data['accessibilities'] = AccessibilityModel::all();
 
         return view('recomendation.filter', $data);
     }
@@ -176,26 +174,6 @@ class RecomendationController extends Controller
 
         $data_criteria_id1 = array('id_kriteria' => $weight_id);
         array_push($weight_criteria_id, $data_criteria_id1);     
-
-        $accessibility = $request->accessibility;
-        $c4 = CriteriaModel::where('kode_kriteria', "C4")->first();
-        if (count($accessibility) == 1) {
-            $criterion_value2 = 1;
-        } elseif (count($accessibility) == 2) {
-            $criterion_value2 = 2;
-        } elseif (count($accessibility) == 3) {
-            $criterion_value2 = 3;
-        } elseif (count($accessibility) == 4) {
-            $criterion_value2 = 4;
-        } elseif (count($accessibility) >= 5) {
-            $criterion_value2 = 5;
-        }
-
-        $data_bobot2 = array('bobot' => $criterion_value2, 'nama_kriteria' => $c4->nama_kriteria);
-        array_push($weight, $data_bobot2);
-
-        $data_criteria_id2 = array('id_kriteria' => $weight_id);
-        array_push($weight_criteria_id, $data_criteria_id2);
 
         $total_weigth = count($weight);
         $j = 0;

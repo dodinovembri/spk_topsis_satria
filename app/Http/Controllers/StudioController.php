@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\AlternativeModel;
 use Illuminate\Http\Request;
-use App\Models\TypeModel;
 
-class CategoryController extends Controller
+class StudioController extends Controller
 {
     /**
      * Display a listing of the resource.

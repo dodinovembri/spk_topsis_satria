@@ -38,14 +38,6 @@ Route::get('destination/edit/{id}', [App\Http\Controllers\DestinationController:
 Route::post('destination/update/{id}', [App\Http\Controllers\DestinationController::class, 'update'])->name('update');
 Route::get('destination/destroy/{id}', [App\Http\Controllers\DestinationController::class, 'destroy'])->name('destroy');
 
-Route::get('category', [App\Http\Controllers\CategoryController::class, 'index'])->name('index');
-Route::get('category/create', [App\Http\Controllers\CategoryController::class, 'create'])->name('create');
-Route::post('category/store', [App\Http\Controllers\CategoryController::class, 'store'])->name('store');
-Route::get('category/show/{id}', [App\Http\Controllers\CategoryController::class, 'show'])->name('show');
-Route::get('category/edit/{id}', [App\Http\Controllers\CategoryController::class, 'edit'])->name('edit');
-Route::post('category/update/{id}', [App\Http\Controllers\CategoryController::class, 'update'])->name('update');
-Route::get('category/destroy/{id}', [App\Http\Controllers\CategoryController::class, 'destroy'])->name('destroy');
-
 Route::get('contact', [App\Http\Controllers\ContactController::class, 'index'])->name('index');
 Route::get('contact/create', [App\Http\Controllers\ContactController::class, 'create'])->name('create');
 Route::post('contact/store', [App\Http\Controllers\ContactController::class, 'store'])->name('store');

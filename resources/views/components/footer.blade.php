@@ -9,11 +9,11 @@
 									<!-- f-logo -->
 									<div class="f-logo">
 										<a href="index.html">
-											<img src="{{ asset('logo/logo.png') }}" width="80px" alt="logo-img">
+											<img src="{{ asset('logo/logo.jpg') }}" width="80px" alt="logo-img">
 										</a>
 									</div>
 									<div class="info-box">
-										<p>2100 New State Jackson Lane<br>+880-036987458765521</p>
+										<p>Palembang, Sumatera Selatan</p>
 									</div>
 								</div>
 							</aside>
@@ -62,7 +62,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="copyright-text text-center">
-									<p><a href="index.html">Destinasi Wisata</a> &copy; 2021. All rights reserved.</p>
+									<p><a href="void::">Studio Foto Wong Kito</a> &copy; 2022. All rights reserved.</p>
 								</div>
 							</div>
 							<!--~./ col-12 ~-->

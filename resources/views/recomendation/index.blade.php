@@ -37,7 +37,7 @@
                                         <!--./ entry-thumb -->
                                         <div class="content-entry-wrap">
                                             <div class="entry-category">
-                                                <a href="{{ url('destination', $value->id) }}" class="tag tag- getting-started">Mode Panorama</a>
+                                                <a href="{{ url('destination', $value->id) }}" class="tag tag- getting-started">Mode Video</a>
                                             </div>
                                             <!--./ entry-category -->
                                             <h5 class="">

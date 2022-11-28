@@ -23,7 +23,7 @@
                                             </h3>
                                             <br>
                                             <div class="entry-category">
-                                                <a href="{{ url('recomendation/filter') }}">Mau Kemana</a>
+                                                <a href="{{ url('recomendation/filter') }}">Get Recomendation</a>
                                                 <?php 
                                                 $id = [];
                                                 foreach ($alternatives as $key => $value) {
@@ -31,7 +31,7 @@
                                                 } 
                                                 $id_show = array_rand($id);
                                                 $v = $id[$id_show]; ?>
-                                                <a href="{{ url('recomendation/show', $v) }}" class="tag tag- lifestyle">Kemana Saja</a>
+                                                <a href="{{ url('recomendation/show', $v) }}" class="tag tag- lifestyle">See Prewedding Moment</a>
                                             </div>
                                             <!--./ entry-title -->
                                         </div>
@@ -53,7 +53,7 @@
                 <div class="col-lg-12 col-md-3">
                     <div class="col-lg-12 text-center mrt-30 mrb-90">
                         <div class="load-more-btn-area">
-                            <a href="{{ url('category') }}" class="load-more-btn">Lihat Daftar Destinasi Wisata</a>
+                            <a href="{{ url('recomendation') }}" class="load-more-btn">Lihat Daftar Studio Foto Prewedding</a>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                                         <!--./ entry-thumb -->
                                         <div class="content-entry-wrap">
                                             <div class="entry-category">
-                                                <a href="{{ url('destination', $value->id) }}" target="_blank" class="tag tag- getting-started">Panorama Views</a>
+                                                <a href="{{ url('destination', $value->id) }}" target="_blank" class="tag tag- getting-started">Video Views</a>
                                             </div>
                                             <!--./ entry-category -->
                                             <h3 class="entry-title">
@@ -113,10 +113,6 @@
                     <div class="load-more-btn-area">
                         <a href="{{ url('recomendation') }}" class="load-more-btn">See More</a>
                     </div>
-                    <nav class="navigation paging-navigation text-center pd-t-5 d-none">
-                        <span class="page-number">Page 1 of 2</span>
-                        <a class="older-posts" href="page/2/index.html">Older Posts &rarr;</a>
-                    </nav>
                 </div>
             </div>
         </div>

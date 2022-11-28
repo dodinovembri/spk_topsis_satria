@@ -122,7 +122,7 @@
     <!-- END: .app-container -->
     <!-- BEGIN .main-footer -->
     <footer class="main-footer fixed-btm">
-        Copyright Unify Admin 2017.
+        Copyright Studio Wong Kito 2022.
     </footer>
     <!-- END: .main-footer -->
 </div>

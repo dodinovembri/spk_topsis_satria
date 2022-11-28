@@ -11,7 +11,7 @@
                         <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
                             <div class="login-box">
                                 <a href="#" class="login-logo">
-                                    <img src="{{ asset('logo/logo.jpg') }}" alt="Unify Admin Dashboard" />
+                                    <img src="{{ asset('logo/logo3.png') }}" alt="Unify Admin Dashboard" />
                                 </a>
                                 <div class="input-group">
                                     <span class="input-group-addon" id="username"><i class="icon-account_circle"></i></span>

@@ -73,15 +73,15 @@ class AlternativeValueController extends Controller
         // save facility
         $facility = $request->facility;
         $c3 = CriteriaModel::where('kode_kriteria', "C3")->first();
-        if (count($facility) == 1) {
+        if (count($facility) == 0) {
             $criterion_value = CriterionValueModel::where('id_kriteria', $c3->id)->where('nilai', 1)->first();
-        } elseif (count($facility) == 2) {
+        } elseif (count($facility) == 1 || count($facility) == 2) {
             $criterion_value = CriterionValueModel::where('id_kriteria', $c3->id)->where('nilai', 2)->first();
-        } elseif (count($facility) == 3) {
+        } elseif (count($facility) == 3 || count($facility) == 4) {
             $criterion_value = CriterionValueModel::where('id_kriteria', $c3->id)->where('nilai', 3)->first();
-        } elseif (count($facility) == 4) {
+        } elseif (count($facility) == 5 || count($facility) == 6) {
             $criterion_value = CriterionValueModel::where('id_kriteria', $c3->id)->where('nilai', 4)->first();
-        } elseif (count($facility) >= 5) {
+        } elseif (count($facility) >= 7) {
             $criterion_value = CriterionValueModel::where('id_kriteria', $c3->id)->where('nilai', 5)->first();
         }
 
@@ -159,15 +159,15 @@ class AlternativeValueController extends Controller
             // save facility
             $facility = $request->facility;
             $c3 = CriteriaModel::where('kode_kriteria', "C3")->first();
-            if (count($facility) == 1) {
+            if (count($facility) == 0) {
                 $criterion_value = CriterionValueModel::where('id_kriteria', $c3->id)->where('nilai', 1)->first();
-            } elseif (count($facility) == 2) {
+            } elseif (count($facility) == 1 || count($facility) == 2) {
                 $criterion_value = CriterionValueModel::where('id_kriteria', $c3->id)->where('nilai', 2)->first();
-            } elseif (count($facility) == 3) {
+            } elseif (count($facility) == 3 || count($facility) == 4) {
                 $criterion_value = CriterionValueModel::where('id_kriteria', $c3->id)->where('nilai', 3)->first();
-            } elseif (count($facility) == 4) {
+            } elseif (count($facility) == 5 || count($facility) == 6) {
                 $criterion_value = CriterionValueModel::where('id_kriteria', $c3->id)->where('nilai', 4)->first();
-            } elseif (count($facility) >= 5) {
+            } elseif (count($facility) >= 7) {
                 $criterion_value = CriterionValueModel::where('id_kriteria', $c3->id)->where('nilai', 5)->first();
             }
 
