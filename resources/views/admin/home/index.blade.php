@@ -27,16 +27,16 @@
                             <div class="card-body">
                                 <div class="stats-widget">
                                     <div class="stats-widget-header">
-                                        <i class="icon-facebook"></i>
+                                        <i class="icon-laptop_windows"></i>
                                     </div>
                                     <div class="stats-widget-body">
                                         <!-- Row start -->
                                         <ul class="row no-gutters">
                                             <li class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col">
-                                                <h6 class="title">Facebook</h6>
+                                                <h6 class="title">Alternatif</h6>
                                             </li>
                                             <li class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col">
-                                                <h4 class="total">5,600</h4>
+                                                <h4 class="total">{{ $alternative }}</h4>
                                             </li>
                                         </ul>
                                     </div>
@@ -49,16 +49,16 @@
                             <div class="card-body">
                                 <div class="stats-widget">
                                     <div class="stats-widget-header">
-                                        <i class="icon-twitter"></i>
+                                        <i class="icon-happy"></i>
                                     </div>
                                     <div class="stats-widget-body">
                                         <!-- Row start -->
                                         <ul class="row no-gutters">
                                             <li class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col">
-                                                <h6 class="title">Twitter</h6>
+                                                <h6 class="title">Feedback</h6>
                                             </li>
                                             <li class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col">
-                                                <h4 class="total">3,500</h4>
+                                                <h4 class="total">{{ $contact_us }}</h4>
                                             </li>
                                         </ul>
                                     </div>
@@ -70,18 +70,17 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="stats-widget">
-                                    <a href="#" class="stats-label" data-toggle="tooltip" data-placement="top" title="New Followers">47</a>
                                     <div class="stats-widget-header">
-                                        <i class="icon-googleplus"></i>
+                                        <i class="icon-document3"></i>
                                     </div>
                                     <div class="stats-widget-body">
                                         <!-- Row start -->
                                         <ul class="row no-gutters">
                                             <li class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col">
-                                                <h6 class="title">Google</h6>
+                                                <h6 class="title">Kriteria</h6>
                                             </li>
                                             <li class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col">
-                                                <h4 class="total">2,800</h4>
+                                                <h4 class="total">{{ $criteria }}</h4>
                                             </li>
                                         </ul>
                                     </div>
@@ -93,18 +92,17 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="stats-widget">
-                                    <a href="#" class="stats-label" data-toggle="tooltip" data-placement="top" title="New Posts">12</a>
                                     <div class="stats-widget-header">
-                                        <i class="icon-rss"></i>
+                                        <i class="icon-bookmarks"></i>
                                     </div>
                                     <div class="stats-widget-body">
                                         <!-- Row start -->
                                         <ul class="row no-gutters">
                                             <li class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col">
-                                                <h6 class="title">Blog</h6>
+                                                <h6 class="title">Fasilitas</h6>
                                             </li>
                                             <li class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col">
-                                                <h4 class="total">7,000</h4>
+                                                <h4 class="total">{{ $facility }}</h4>
                                             </li>
                                         </ul>
                                     </div>
