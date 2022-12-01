@@ -67,9 +67,9 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row gutters">
-                                                <label for="inputEmail3" class="col-sm-3 col-form-label">Video</label>
+                                                <label for="inputEmail3" class="col-sm-3 col-form-label">kode Video Youtube</label>
                                                 <div class="col-sm-9">
-                                                    <input type="file" name="video" class="form-control" placeholder="Longitude">
+                                                    <input type="text" name="video" value="{{ $alternative->video }}" class="form-control" placeholder="ex. tfBw25PoPW8E">
                                                 </div>
                                             </div>
                                             <div class="form-group row gutters">

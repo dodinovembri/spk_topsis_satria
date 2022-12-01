@@ -67,9 +67,9 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row gutters">
-                                                <label for="inputEmail3" class="col-sm-3 col-form-label">Video</label>
+                                                <label for="inputEmail3" class="col-sm-3 col-form-label">Kode Video Youtube</label>
                                                 <div class="col-sm-9">
-                                                    <input type="file" name="video" class="form-control" placeholder="Longitude">
+                                                    <input type="text" name="video" class="form-control" placeholder="ex. tfBw25PoPW8E" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row gutters">

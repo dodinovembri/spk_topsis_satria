@@ -44,7 +44,7 @@
                                                 </div>
                                             </div>
                                             <?php foreach ($criterias as $key => $value) {
-                                                if ($value->kode_kriteria == "C3") {
+                                                if ($value->kode_kriteria == "C3" || $value->kode_kriteria == "C4") {
                                                     continue;
                                                 } ?>
                                                 <div class="form-group row gutters">
@@ -69,7 +69,22 @@
                                                        <input type="checkbox" name="facility[]" value="{{ $value2->id }}"> {{$value2->nama_fasilitas}}
                                                     </div>
                                                 <?php } ?>
-                                            </div>                                         
+                                            </div>     
+                                            <?php foreach ($criterias as $key => $value) {
+                                                if ($value->kode_kriteria == "C4") { ?>
+                                                    <div class="form-group row gutters">
+                                                        <label for="inputEmail3" class="col-sm-3 col-form-label">{{ $value->nama_kriteria }}</label>
+                                                        <div class="col-sm-9">
+                                                            <select name="weight_criterias[]" class="form-control" id="">
+                                                                <option value="">Select</option>
+                                                                <?php foreach ($value->criterion_value as $key2 => $value2) { ?>
+                                                                    <option value="{{ $value->id }}#{{ $value2->id }}">{{ $value2->keterangan }}</option>
+                                                                <?php } ?>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                <?php } ?>
+                                            <?php } ?>                                    
                                             <br>
                                             <div class="form-group row gutters">
                                                 <label for="inputEmail3" class="col-sm-3 col-form-label"></label>

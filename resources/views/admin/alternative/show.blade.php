@@ -65,6 +65,12 @@
                                             </div>
                                         </div>
                                         <div class="form-group row gutters">
+                                            <label for="inputEmail3" class="col-sm-3 col-form-label">Url Video</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" name="video" class="form-control" placeholder="Video" value="{{ $alternative->video }}" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row gutters">
                                             <label for="inputEmail3" class="col-sm-3 col-form-label">Keterangan</label>
                                             <div class="col-sm-9">
                                                 <textarea type="file" rows="9" name="keterangan" class="form-control">{{ $alternative->keterangan }}</textarea>

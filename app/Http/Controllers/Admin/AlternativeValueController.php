@@ -102,6 +102,16 @@ class AlternativeValueController extends Controller
             $insert_facility->save();
         }
 
+        $weight_criterias = $request->weight_criterias;
+        foreach ($weight_criterias as $key => $value) {
+            $split = explode("#", $value);
+            $insert = new AlternativeValueModel();
+            $insert->id_alternatif = $request->session()->get('id_alternatif');
+            $insert->id_kriteria = $split[0];
+            $insert->id_nilai_kriteria = $split[1];
+            $insert->save();
+        }
+
         return redirect(url('admin/alternative_values', $request->session()->get('id_alternatif')))->with('message', 'Data Nilai Kriteria berhasil di simpan!');
     }
 

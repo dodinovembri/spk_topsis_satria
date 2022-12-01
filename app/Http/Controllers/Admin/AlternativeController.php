@@ -44,14 +44,7 @@ class AlternativeController extends Controller
 
             $file                       = $request->file('gambar');
             $fileName3                  = uniqid() . '.' . $file->getClientOriginalExtension();
-            $request->file('gambar')->move("img/alternative/", $fileName3);
-
-            $video = $request->file('video');
-            if (isset($video)) {
-                $file2                       = $request->file('video');
-                $fileName4                  = uniqid() . '.' . $file2->getClientOriginalExtension();
-                $request->file('video')->move("img/alternative/", $fileName4);
-            }     
+            $request->file('gambar')->move("img/alternative/", $fileName3);   
 
             $insert = new AlternativeModel();
             $insert->kode_alternatif = $request->kode_alternatif;
@@ -59,9 +52,7 @@ class AlternativeController extends Controller
             $insert->latitude = $request->latitude;
             $insert->longitude = $request->longitude;
             $insert->gambar = $fileName3;
-            if (isset($video)) {
-                $insert->video = $fileName4;
-            }
+            $insert->video = $request->video;
             $insert->keterangan = $request->keterangan;
             $insert->save();
 
@@ -109,13 +100,7 @@ class AlternativeController extends Controller
             $file                       = $request->file('gambar');
             $fileName3                  = uniqid() . '.' . $file->getClientOriginalExtension();
             $request->file('gambar')->move("img/alternative/", $fileName3);
-        }
-        $video = $request->file('video');
-        if (isset($video)) {
-            $file2                       = $request->file('video');
-            $fileName4                  = uniqid() . '.' . $file2->getClientOriginalExtension();
-            $request->file('video')->move("img/alternative/", $fileName4);
-        }        
+        }      
 
         $update = AlternativeModel::find($id);
         $update->kode_alternatif = $request->kode_alternatif;
@@ -125,9 +110,7 @@ class AlternativeController extends Controller
         if (isset($gambar)) {
             $update->gambar = $fileName3;
         }
-        if (isset($video)) {
-            $update->video = $fileName4;
-        }
+        $update->video = $request->video;
         $update->keterangan = $request->keterangan;
         $update->update();
         return redirect(url('admin/alternative'))->with('message', 'Data berhasil diupdate!');
