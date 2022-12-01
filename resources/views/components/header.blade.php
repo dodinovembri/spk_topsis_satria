@@ -1,5 +1,5 @@
 <header class="site-header default-header-style style-one intro-element">
-    <div class="navigation-area">
+    <div class="navigation-area" style="background-color: #c9b204;">
         <div class="container-fluid">
             <div class="row justify-content-left align-items-center">
                 <div class="col-lg-3 justify-content-star">
@@ -13,7 +13,7 @@
                                 <div class="col-6 col-lg-12">
                                     <div class="site-branding">
                                         <a href="{{ url('/') }}">
-                                            <img src="{{ asset('logo/logo.jpg') }}" width="80px" alt="Pathway blog" />
+                                            <img src="{{ asset('logo/logo.png') }}" width="80px" alt="Studio Foto Prewedding" />
                                         </a>
                                     </div><!-- /.site-branding -->
                                 </div>
