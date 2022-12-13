@@ -1,7 +1,7 @@
 <header class="site-header default-header-style style-one intro-element">
     <div class="navigation-area" style="background-color: #c9b204;">
         <div class="container-fluid">
-            <div class="row justify-content-left align-items-center">
+            <div class="row justify-content-left align-items-center" style="margin-left: 30px;">
                 <div class="col-lg-3 justify-content-star">
 
                     <div class="header-logo-area">
@@ -30,8 +30,8 @@
                         </div>
                     </div><!-- /.header-logo-area -->
                 </div>
-                <div class="col-lg-2"></div>
-                <div class="col-md-7 justify-content-end">
+                <div class="col-lg-4"></div>
+                <div class="col-md-5 justify-content-end">
                     <div class="site-navigation">
                         <div class="navigation-area">
                             <div class="site-navigation">
