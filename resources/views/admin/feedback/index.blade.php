@@ -37,8 +37,6 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama</th>
-                                            <th>Email</th>
-                                            <th>Subject</th>
                                             <th>Pesan</th>
                                             <th>Aksi</th>
                                         </tr>
@@ -50,8 +48,6 @@
                                             <tr>
                                                 <td>{{ $no }}</td>
                                                 <td>{{ $value->nama }}</td>
-                                                <td>{{ $value->email }}</td>
-                                                <td>{{ $value->subject }}</td>
                                                 <td>{{ $value->pesan }}</td>
                                                 <td>
                                                     <a href="{{ url('admin/feedback/show', $value->id) }}"><span class="icon-eye"></span></a> &nbsp;

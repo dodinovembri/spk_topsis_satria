@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\AlternativeModel;
+use App\Models\CriteriaModel;
+use App\Models\FacilityModel;
 use App\Models\SliderModel;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -21,9 +22,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $data['alternatives'] = AlternativeModel::all();
+        $data['criterias'] = CriteriaModel::with('criterion_value')->get();
+        $data['facilities'] = FacilityModel::all();
         $data['sliders'] = SliderModel::where('status', 1)->get();
+
         return view('home', $data);
     }
 }

@@ -15,7 +15,7 @@
                 <div class="col-lg-12">
                     <div class="main-wrapper-content style-one">
                         <div>
-                            <h3 style="text-align: center;">Contact Us</h3>
+                            <h3 style="text-align: center;">Kritik dan saran agar website kami lebih baik lagi</h3>
                         </div>
                         <main class="site-main ">
                             <article class="post style-four post-full post no-image page no-image">
@@ -36,22 +36,6 @@
                                                                 <div class="input-wrapper">
                                                                     <label>Your Name</label>
                                                                     <input name="nama" type="text" class="form-control" required>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12">
-                                                            <div class="form-group">
-                                                                <div class="input-wrapper">
-                                                                    <label>Email Address</label>
-                                                                    <input type="email" name="email" class="form-control" required>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-12">
-                                                            <div class="form-group">
-                                                                <div class="input-wrapper">
-                                                                    <label>Subject</label>
-                                                                    <input name="subject" type="text" class="form-control" required>
                                                                 </div>
                                                             </div>
                                                         </div>

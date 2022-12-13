@@ -41,18 +41,6 @@
                                             </div>
                                         </div>
                                         <div class="form-group row gutters">
-                                            <label for="inputEmail3" class="col-sm-3 col-form-label">Email</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" name="nama_kriteria" class="form-control" placeholder="Nama Feedback" value="{{ $feedback->nama_kriteria }}" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row gutters">
-                                            <label for="inputEmail3" class="col-sm-3 col-form-label">Subject</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" name="jenis_kriteria" class="form-control" placeholder="Jenis Feedback" value="{{ $feedback->jenis_kriteria }}" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row gutters">
                                             <label for="inputEmail3" class="col-sm-3 col-form-label">Pesan</label>
                                             <div class="col-sm-9">
                                                 <textarea type="text" rows="3" name="keterangan" class="form-control">{{ $feedback->pesan }}</textarea>

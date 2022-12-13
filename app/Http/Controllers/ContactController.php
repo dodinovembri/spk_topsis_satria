@@ -36,9 +36,7 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $insert = new ContactUsModel();
-        $insert->nama = $request->nama;        
-        $insert->email = $request->email;        
-        $insert->subject = $request->subject;        
+        $insert->nama = $request->nama;               
         $insert->pesan = $request->pesan;        
         $insert->save();
         

@@ -2,122 +2,198 @@
 
 @section('content')
 
+@include('components.loader')
+
 <div class="site-content">
 
     @include('components.header')
 
-    <div class="frontpage-slider-posts style-one">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 no-padding">
-                    <div class="owl-carousel frontpage-slider-one style-three carousel-rectangle carousel-nav-center">
-                        <?php foreach ($sliders as $key => $value) { ?>
-                            <article class="post hentry post-slider-four" style="background-image: url({{ asset('img/slider') }}/{{ $value->gambar }});">
-                                <!--./ entry-thumb -->
-                                <div class="container">
-                                    <div class="content-entry-wrap">
-                                        <div class="inner-box">
-    
-                                            <h3 class="entry-title">
-                                                <a href="organising-content/index.html">{{ $value->judul }}</a>
-                                            </h3>
-                                            <br>
-                                            <div class="entry-category">
-                                                <a href="{{ url('recomendation/filter') }}">Get Recomendation</a>
-                                                <?php 
-                                                $id = [];
-                                                foreach ($alternatives as $key => $value) {
-                                                    array_push($id, $value->id);
-                                                } 
-                                                $id_show = array_rand($id);
-                                                $v = $id[$id_show]; ?>
-                                                <a href="{{ url('recomendation/show', $v) }}" class="tag tag- lifestyle">See Prewedding Moment</a>
-                                            </div>
-                                            <!--./ entry-title -->
-                                        </div>
-                                    </div>
-                                    <!--./ content-entry-wrap -->
-                                </div>
-                            </article>
-                        <?php } ?>
-                    </div>
-                    <!--/#frontpage-slide -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="features-block">
-        <div class="container pd-0 ml-t-90">
-            <div class="row feature-list feature-list-one">
-                <div class="col-lg-12 col-md-3">
-                    <div class="col-lg-12 text-center mrt-30 mrb-90">
-                        <div class="load-more-btn-area">
-                            <a href="{{ url('recomendation') }}" class="load-more-btn">Lihat Daftar Studio Foto Prewedding</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        var random_class = ['symbol-light-warning', 'symbol-light-primary', 'symbol-light-success', 'symbol-light-danger', 'symbol-light-dark', 'symbol-light-info'];
-    </script>
-
-    <div class="main-wrapper pd-t-60">
+    <div class="main-wrapper pd-t-40">
         <div class="container pd-0">
             <div class="row justify-content-between">
                 <div class="col-lg-12 main-wrapper-content">
                     <main class="site-main style-two">
-                        <div class="row">
-                            <?php foreach ($alternatives as $key => $value) { ?>
-                                <div class="col-lg-4 post-loop odd">
-                                    <article class="post tag-getting-started post-grid-style post-grid-style-two mrb-60">
-                                        <div class="entry-thumb">
-                                            <figure class="thumb-wrap">
-                                                <img class="post-card-image" src="{{ asset('img/alternative') }}/{{ $value->gambar }}" loading="lazy" alt="Start here for a quick overview everything you need to know" />
-                                            </figure>
-                                            <!--./ thumb-wrap -->
+                        <div class="row" id="post-masonry">
+                            <div class="col-lg-8 post-loop odd">
+                                <h2 style="text-align: center;"><b>SELAMAT DATANG</b></h2>
+                                <h3 style="text-align: center;"><b>DI PORTAL PEMILIHAN STUDIO FOTO PREWEDDING</b></h3>
+                                <h3 style="text-align: center;"><b>DI KOTA PALEMBANG</b></h3>
+                                <br>
+                                <article class="post tag-getting-started post-grid-style post-grid-style-two mrb-60">
+                                    <div class="owl-carousel frontpage-slider-one style-three carousel-rectangle carousel-nav-center" style="height: 485px;">
+                                        <?php foreach ($sliders as $key => $value) { ?>
+                                            <article class="post hentry post-slider-four" style="background-image: url({{ asset('img/slider') }}/{{ $value->gambar }});">
+                                                <!--./ entry-thumb -->
+                                                <div class="container">
+                                                    <div class="content-entry-wrap">
+                                                        <div class="inner-box">
+
+                                                            <h3 class="entry-title">
+                                                                <a href="organising-content/index.html">{{ $value->judul }}</a>
+                                                            </h3>
+                                                            <br>
+                                                            <!--./ entry-title -->
+                                                        </div>
+                                                    </div>
+                                                    <!--./ content-entry-wrap -->
+                                                </div>
+                                            </article>
+                                        <?php } ?>
+                                    </div>
+                                </article>
+                                <a href="{{ url('recomendation/all') }}"><button style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;">Rekomendasi</button></a></li>
+                            </div>
+                            <div class="col-lg-4 post-loop odd">
+                                <article class="post tag-getting-started post-grid-style post-grid-style-two mrb-60">
+                                    <div class="sign-wrapper-main mrt-20">
+                                        <div class="signup-form mx-auto">
+                                            <div class="cus-sign-box">
+                                                <div class="form-inner-content">
+                                                    <form data-members-form="signin" action="{{ url('recomendation/search') }}" method="POST">
+                                                        @csrf
+                                                        <h4>Temukan Rekomendasi Studio Foto Prewedding</h4>
+                                                        <?php foreach ($criterias as $key => $value) {
+                                                            if ($value->kode_kriteria == "C3") {
+                                                                continue;
+                                                            }  ?>
+                                                            <select name="criterias[]" id="" class="form-control" style="margin-top: 10px;" required>
+                                                                <option value="" disabled selected value>{{ $value->nama_kriteria }}</option>
+                                                                <?php foreach ($value->criterion_value as $key2 => $value2) { ?>
+                                                                    <option name="criterion_value" value="{{ $value->id }}#{{ $value2->nilai }}" class="fomr-control">{{ $value2->keterangan }}</option>
+                                                                <?php } ?>
+                                                            </select>
+                                                        <?php } ?>
+                                                        <p>Fasilitas</p>
+                                                        <?php foreach ($facilities as $key2 => $value2) { ?>
+                                                            <input type="checkbox" name="facility[]" value="{{ $value2->id }}"> {{$value2->nama_fasilitas}} <br>
+                                                        <?php } ?>
+                                                        <div class="subscribe-btn d-flex align-items-center">
+                                                            <button type="button" id="myBtn" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary">
+                                                                <span class="button-text">Keterangan Kriteria</span>
+                                                                <span class="button-loader"><i class="fas fa-sync-alt"></i></span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="subscribe-btn d-flex align-items-center">
+                                                            <button type="submit" class="btn btn-sign">
+                                                                <span class="button-text">Dapatkan Rekomendasi</span>
+                                                                <span class="button-loader"><i class="fas fa-sync-alt"></i></span>
+                                                            </button>
+                                                        </div>
+
+                                                        <p class="mrt-45 text-center mrb-0 account-links"></p>
+
+                                                    </form>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <!--./ entry-thumb -->
-                                        <div class="content-entry-wrap">
-                                            <div class="entry-category">
-                                                <a href="{{ url('destination', $value->id) }}" target="_blank" class="tag tag- getting-started">Video Views</a>
-                                            </div>
-                                            <!--./ entry-category -->
-                                            <h3 class="entry-title">
-                                                {{ $value->nama_alternatif }}
-                                            </h3>
-                                            <!--./ entry-title -->
-                                            <div class="entry-content">
-                                                <p style="text-align: justify; "><?php echo htmlspecialchars_decode(substr($value->keterangan, 0, 82)) ?> <span style="color: #f67280;">...</span></p>
-                                            </div>
-                                            <div class="entry-footer">
-                                                <a href="{{ url('recomendation/show', $value->id) }}" class="more-links">Continue Reading -</a>
-                                            </div>
-                                        </div>
-                                        <!--./ content-entry-wrap -->
-                                    </article>
+                                    </div>
+                                </article>
+                                <style>
+                                    /* The Modal (background) */
+                                    .modal {
+                                        display: none;
+                                        /* Hidden by default */
+                                        position: fixed;
+                                        /* Stay in place */
+                                        z-index: 1;
+                                        /* Sit on top */
+                                        padding-top: 100px;
+                                        /* Location of the box */
+                                        left: 0;
+                                        top: 0;
+                                        width: 100%;
+                                        /* Full width */
+                                        height: 100%;
+                                        /* Full height */
+                                        overflow: auto;
+                                        /* Enable scroll if needed */
+                                        background-color: rgb(0, 0, 0);
+                                        /* Fallback color */
+                                        background-color: rgba(0, 0, 0, 0.4);
+                                        /* Black w/ opacity */
+                                    }
+
+                                    /* Modal Content */
+                                    .modal-content {
+                                        background-color: #fefefe;
+                                        margin: auto;
+                                        padding: 20px;
+                                        border: 1px solid #888;
+                                        width: 50%;
+                                    }
+
+                                    /* The Close Button */
+                                    .close {
+                                        color: #aaaaaa;
+                                        float: right;
+                                        font-size: 28px;
+                                        font-weight: bold;
+                                    }
+
+                                    .close:hover,
+                                    .close:focus {
+                                        color: #000;
+                                        text-decoration: none;
+                                        cursor: pointer;
+                                    }
+                                </style>
+
+                                <!-- The Modal -->
+                                <div id="myModal" class="modal">
+
+                                    <!-- Modal content -->
+                                    <div class="modal-content">
+                                        <center><span class="close">&times;</span></center>
+                                        <?php foreach ($criterias as $key => $value) { ?>
+                                            <ul><b>{{ $value->nama_kriteria }}</b> ({{ $value->keterangan }})
+                                                <?php foreach ($value->criterion_value as $key2 => $value2) { ?>
+                                                    <li style="margin-left: 20px;">{{ $value2->keterangan }}</li>
+                                                <?php } ?>
+                                            </ul><br>
+                                        <?php } ?>
+                                    </div>
+
                                 </div>
-                            <?php if ($key == 5) {
-                                    break;
-                                }
-                            } ?>
+
+                                <script>
+                                    // Get the modal
+                                    var modal = document.getElementById("myModal");
+
+                                    // Get the button that opens the modal
+                                    var btn = document.getElementById("myBtn");
+
+                                    // Get the <span> element that closes the modal
+                                    var span = document.getElementsByClassName("close")[0];
+
+                                    // When the user clicks the button, open the modal 
+                                    btn.onclick = function() {
+                                        modal.style.display = "block";
+                                    }
+
+                                    // When the user clicks on <span> (x), close the modal
+                                    span.onclick = function() {
+                                        modal.style.display = "none";
+                                    }
+
+                                    // When the user clicks anywhere outside of the modal, close it
+                                    window.onclick = function(event) {
+                                        if (event.target == modal) {
+                                            modal.style.display = "none";
+                                        }
+                                    }
+                                </script>
+
+                            </div>
+
                         </div>
                     </main>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 text-center mrt-30 mrb-90">
-                    <div class="load-more-btn-area">
-                        <a href="{{ url('recomendation') }}" class="load-more-btn">See More</a>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!--~./ end main wrapper ~-->
+
     @include('components.footer')
 </div>
+
 @endsection

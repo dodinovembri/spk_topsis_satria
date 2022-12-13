@@ -41,7 +41,6 @@
                                             <div class="mainmenu d-flex align-items-center">
                                                 <ul class="nav">
                                                     <li class="nav-home nav-current"><a href="{{ url('/') }}">Halaman Utama</a></li>
-                                                    <li class="nav-tags"><a href="{{ url('recomendation/all') }}">Rekomendasi</a></li>
                                                     <li class="nav-authors"><a href="{{ url('recomendation') }}">Daftar Studio</a></li>
                                                     <li class="nav-membership"><a href="{{ url('contact') }}">Kontak</a></li>
                                                 </ul>
@@ -53,10 +52,7 @@
                             </div><!-- /.site-navigation -->
                         </div><!-- /.navigation-area -->
 
-                        <!--~~./ end site header ~~-->
-                        <!--~~~ Sticky Header ~~~-->
                         <div id="sticky-header" class="active"></div>
-                        <!--~./ end sticky header ~-->
                     </div><!-- /.site-navigation -->
                 </div><!-- /.col-12 -->
             </div><!-- /.row -->
