@@ -51,7 +51,7 @@
                                                 <div class="form-inner-content">
                                                     <form data-members-form="signin" action="{{ url('recomendation/search') }}" method="POST">
                                                         @csrf
-                                                        <h4>Temukan Rekomendasi Studio Foto Prewedding</h4>
+                                                        <h4>Temukan Rekomendasi Studio Foto Prewedding</h4><br>
                                                         <?php foreach ($criterias as $key => $value) {
                                                             if ($value->kode_kriteria == "C3") {
                                                                 continue;
@@ -67,12 +67,7 @@
                                                         <?php foreach ($facilities as $key2 => $value2) { ?>
                                                             <input type="checkbox" name="facility[]" value="{{ $value2->id }}"> {{$value2->nama_fasilitas}} <br>
                                                         <?php } ?>
-                                                        <div class="subscribe-btn d-flex align-items-center">
-                                                            <button type="button" id="myBtn" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary">
-                                                                <span class="button-text">Keterangan Kriteria</span>
-                                                                <span class="button-loader"><i class="fas fa-sync-alt"></i></span>
-                                                            </button>
-                                                        </div>
+                                                        <br>
                                                         <div class="subscribe-btn d-flex align-items-center">
                                                             <button type="submit" class="btn btn-sign">
                                                                 <span class="button-text">Dapatkan Rekomendasi</span>
