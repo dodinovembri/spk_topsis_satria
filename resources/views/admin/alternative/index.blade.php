@@ -41,8 +41,6 @@
                                             <th>No</th>
                                             <th>Kode</th>
                                             <th>Nama</th>
-                                            <th>Latitude</th>
-                                            <th>Longitude</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -54,8 +52,6 @@
                                                 <td>{{ $no }}</td>
                                                 <td><a href="{{ url('admin/alternative_values', $value->id) }}"><b><u>{{ $value->kode_alternatif }}</u></b></a></td>
                                                 <td>{{ $value->nama_alternatif }}</td>
-                                                <td>{{ $value->latitude }}</td>
-                                                <td>{{ $value->longitude }}</td>
                                                 <td>
                                                     <a href="{{ url('admin/alternative_galleries', $value->id) }}"><span class="icon-camera2"></span></a> &nbsp;
                                                     <a href="{{ url('admin/alternative/show', $value->id) }}"><span class="icon-eye"></span></a> &nbsp;

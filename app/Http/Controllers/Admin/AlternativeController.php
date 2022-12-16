@@ -49,8 +49,7 @@ class AlternativeController extends Controller
             $insert = new AlternativeModel();
             $insert->kode_alternatif = $request->kode_alternatif;
             $insert->nama_alternatif = $request->nama_alternatif;
-            $insert->latitude = $request->latitude;
-            $insert->longitude = $request->longitude;
+            $insert->maps_url = $request->maps_url;
             $insert->gambar = $fileName3;
             $insert->video = $request->video;
             $insert->keterangan = $request->keterangan;
@@ -105,8 +104,7 @@ class AlternativeController extends Controller
         $update = AlternativeModel::find($id);
         $update->kode_alternatif = $request->kode_alternatif;
         $update->nama_alternatif = $request->nama_alternatif;
-        $update->latitude = $request->latitude;
-        $update->longitude = $request->longitude;
+        $update->maps_url = $request->maps_url;
         if (isset($gambar)) {
             $update->gambar = $fileName3;
         }

@@ -49,15 +49,9 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row gutters">
-                                                <label for="inputEmail3" class="col-sm-3 col-form-label">Latitude</label>
+                                                <label for="inputEmail3" class="col-sm-3 col-form-label">Maps Url</label>
                                                 <div class="col-sm-9">
-                                                    <input type="text" name="latitude" class="form-control" placeholder="Latitude" value="{{ $alternative->latitude }}" required>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row gutters">
-                                                <label for="inputEmail3" class="col-sm-3 col-form-label">Logitude</label>
-                                                <div class="col-sm-9">
-                                                    <input type="text" name="longitude" class="form-control" placeholder="Longitude" value="{{ $alternative->longitude }}" required>
+                                                    <input type="text" name="maps_url" class="form-control" placeholder="Maps Url" value="{{ $alternative->maps_url }}" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row gutters">
